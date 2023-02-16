@@ -19,7 +19,7 @@ kb.add(
 )
 in_kb_s = types.InlineKeyboardMarkup()
 in_kb_s.add(types.InlineKeyboardButton(
-    text="Samsung GALAXY S23",
+    text="Samsung GALAXY S23 ",
     callback_data="smartphone"
 ))
 in_kb_s.add(types.InlineKeyboardButton(

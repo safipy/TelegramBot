@@ -1,25 +1,17 @@
 from aiogram import executor
 from aiogram.dispatcher.filters import Text
 from config import dp
-from handlers.start import(
-    start,
-    help,
-    info
-)
-from handlers.echo import(
-    echo,
-    image
-)
-from handlers.smartphone import (
-    show,
-    show_iphone,
-    show_samsung
-)
+from handlers.admin import bad_words, ban_user
+from handlers.start import start, help, info
+from handlers.echo import echo, image
+from handlers.smartphone import show, show_iphone, show_samsung
 
 if __name__ == "__main__":
     print(__name__)
 
     dp.register_message_handler(start, commands=["start"])
+    dp.register_message_handler(bad_words)
+    dp.register_message_handler(ban_user, commands=['да'], commands_prefix='!/')
     dp.register_message_handler(help, commands=["help"])
     dp.register_message_handler(info, commands=["myinfo"])
     dp.register_message_handler(image, commands=["picture"])
